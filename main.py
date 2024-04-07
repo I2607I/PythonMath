@@ -15,6 +15,14 @@ def comb(n, k):
         res = 0
     return res
 
+def perm(n, k=None):
+    if k is None:
+        k = n
+    res = 1
+    for i in range(n-k+1, n+1):
+        res*= i
+    return res
+
 def factorial(x):
     res = 1
     for i in range(1, x+1):
@@ -44,6 +52,12 @@ def lcm(*args):
     res = args[0]
     for item in args:
         res = lcm2(res, item)
+    return res
+
+def prod(nums, *, start=1):
+    res = start
+    for item in nums:
+        res*=item
     return res
 
 def shift2Pi(x):
@@ -119,8 +133,14 @@ n = 88
 # print(math.factorial(n))
 
 
-print(math.gcd(20, 110, 8))
-print(gcd(20, 110, 8))
+# print(math.gcd(20, 110, 8))
+# print(gcd(20, 110, 8))
 
-print(math.lcm(3, 7, 18))
-print(lcm(3, 7, 18))
+# print(math.lcm(3, 7, 18))
+# print(lcm(3, 7, 18))
+
+# print(math.perm(83, 25))
+# print(perm(83, 25))
+
+print(math.prod([3, 5, 2], start=5))
+print(prod([3, 5, 2], start=5))
